@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Galmuri11';   /* 폰트 이름 */
-  src: url('/src/assets/fonts/Galmuri11.ttf') format('truetype');
+  src: url('/fonts/Galmuri11.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
