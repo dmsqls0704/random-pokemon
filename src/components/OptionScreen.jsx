@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from './Layout';
 import ma from '../assets/images/ma.png';
 import textbox from '../assets/images/textbox.png';
 
-const OptionScreen = ({ onNext }) => {
-    const [options, setOptions] = useState({ legendary: false, mythical: false });
-    const handleCheckboxChange = (e) => {
-        const { name, checked } = e.target;
-        setOptions(prev => ({ ...prev, [name]: checked }));
-        onNext();
-    };
-
-    return (
+const OptionScreen = ({ options, setOptions, onNext }) => {
+   return (
     <Layout>
       <div
         style={{
@@ -72,9 +65,9 @@ const OptionScreen = ({ onNext }) => {
                 name="legendary"
                 checked={options.legendary}
                 onChange={(e) =>
-                    setOptions((prev) => ({ ...prev, legendary: e.target.checked }))
+                  setOptions((prev) => ({ ...prev, legendary: e.target.checked }))
                 }
-                />
+              />
                 전설의 포켓몬 포함
             </label>
             
@@ -84,15 +77,15 @@ const OptionScreen = ({ onNext }) => {
                 name="mythical"
                 checked={options.mythical}
                 onChange={(e) =>
-                    setOptions((prev) => ({ ...prev, mythical: e.target.checked }))
+                  setOptions((prev) => ({ ...prev, mythical: e.target.checked }))
                 }
-                />
+              />
                 환상의 포켓몬 포함
             </label>
             </div>
 
             <button
-              onClick={handleCheckboxChange}
+              onClick={onNext}
               style={{
                 position: 'absolute',
                 bottom: '15px',

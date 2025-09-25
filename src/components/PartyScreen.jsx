@@ -14,21 +14,42 @@ const PartyScreen = ({ options, onNext }) => {
       setVisibleCount(0);
 
       // 모든 포켓몬 목록 가져오기
-      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1200');
+      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1025');
       const data = await res.json();
       const allPokemons = data.results;
 
       // 전설/환상 여부 확인
       const filtered = [];
-      for (let p of allPokemons) {
-        const speciesRes = await fetch(p.url.replace('pokemon', 'pokemon-species'));
-        const speciesData = await speciesRes.json();
+        for (let p of allPokemons) {
+          const speciesRes = await fetch(p.url.replace('pokemon', 'pokemon-species'));
+          const speciesData = await speciesRes.json();
 
-        if (!options.legendary && speciesData.is_legendary) continue;
-        if (!options.mythical && speciesData.is_mythical) continue;
+          const isLegendary = speciesData.is_legendary;
+          const isMythical = speciesData.is_mythical;
 
-        filtered.push({ name: p.name, id: speciesData.id });
-      }
+          // 일반 포켓몬
+          if (!isLegendary && !isMythical) {
+            filtered.push({ name: p.name, id: speciesData.id });
+            continue;
+          }
+
+          // 전설 포함 옵션
+          if (isLegendary && options.legendary) {
+            filtered.push({ name: p.name, id: speciesData.id });
+            continue;
+          }
+
+          // 환상 포함 옵션
+          if (isMythical && options.mythical) {
+            filtered.push({ name: p.name, id: speciesData.id });
+            continue;
+          }
+        }
+
+
+
+  console.log('필터링된 포켓몬 개수:', filtered.length);
+
 
       // 랜덤 6마리 선택
       const selected = [];

@@ -56,7 +56,10 @@ function App() {
         )}
 
       {screen === 'party' && (
-              <PartyScreen options={options} onNext={() => setScreen('start')} />
+              <PartyScreen 
+              options={options} 
+              onNext={() => { setOptions({ legendary: false, mythical:false })
+              setScreen('start') }}/>
       )}
     </div>
   );
