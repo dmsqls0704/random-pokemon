@@ -14,7 +14,7 @@ const PartyScreen = ({ options, onNext }) => {
       setVisibleCount(0);
 
       // 모든 포켓몬 목록 가져오기
-      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1000');
+      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1200');
       const data = await res.json();
       const allPokemons = data.results;
 
