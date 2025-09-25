@@ -1,8 +1,16 @@
+@font-face {
+  font-family: 'Galmuri11';   /* 폰트 이름 */
+  src: url('./assets/fonts/Galmuri11.woff2') format('woff2'),
+       url('./assets/fonts/Galmuri11.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Galmuri11', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif, 'Galmuri11';
+    sans-serif ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
