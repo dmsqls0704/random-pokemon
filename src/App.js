@@ -24,7 +24,7 @@ function App() {
       className="App"
       style={{
         width: '394px',
-        height: '100%',
+        height: '704px',
         margin: '50px auto',  
         border: '3px solid #3662a3ff', 
         borderRadius: '20px',
