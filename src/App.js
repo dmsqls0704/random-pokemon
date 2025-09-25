@@ -5,6 +5,8 @@ import OptionScreen from './components/OptionScreen';
 import BallScreen from './components/BallScreen';
 import PartyScreen from './components/PartyScreen'
 import bgm from './assets/audio/Introduction.mp3';
+// App.js
+import './App.css';
 
 function App() {
   const [screen, setScreen] = useState('start'); 

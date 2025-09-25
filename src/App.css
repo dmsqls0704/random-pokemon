@@ -7,14 +7,14 @@
   pointer-events: none;
 }
 
-@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
-
 @font-face {
-    font-family: 'Galmuri11';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2506-1@1.0/Galmuri11-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
+  font-family: 'Galmuri11';   /* 폰트 이름 */
+  src: url('/fonts/Galmuri11.woff2') format('woff2'),
+       url('./fonts/Galmuri11.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
